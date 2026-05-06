@@ -441,8 +441,8 @@ export default function ReportsPage() {
             }
           >
             <div className="flex h-full flex-col gap-4">
-              <div className="h-[260px]">
-                <ResponsiveContainer width="100%" height="100%">
+              <div className="h-[260px] min-h-0 min-w-0">
+                <ResponsiveContainer width="100%" height="100%" minWidth={0} minHeight={100}>
                   <AreaChart data={certificateTrend} margin={{ top: 20, right: 22, left: 18, bottom: 10 }}>
                     <defs>
                       <linearGradient id="certificatsGradient" x1="0" y1="0" x2="0" y2="1">
@@ -525,9 +525,9 @@ function ChartCard({
         </div>
         {action ? <div className="min-w-0 flex-shrink-0">{action}</div> : null}
       </CardHeader>
-      <CardContent className="h-[340px] px-5 py-5">
+      <CardContent className="h-[340px] min-h-0 px-5 py-5">
         {chart ? (
-          <ResponsiveContainer width="100%" height="100%">
+          <ResponsiveContainer width="100%" height="100%" minWidth={0} minHeight={100}>
             {children}
           </ResponsiveContainer>
         ) : (

@@ -149,8 +149,8 @@ export function DashboardCharts({
             {trendLabel}
           </div>
         </CardHeader>
-        <CardContent className="h-[270px] px-5 pt-4 pb-4">
-          <ResponsiveContainer width="100%" height="100%">
+        <CardContent className="h-[270px] min-h-0 px-5 pt-4 pb-4">
+          <ResponsiveContainer width="100%" height="100%" minWidth={0} minHeight={100}>
             <AreaChart data={chartData} margin={{ top: 20, right: 24, left: 24, bottom: 20 }}>
               <defs>
                 <linearGradient id="inscriptionsGradient" x1="0" y1="0" x2="0" y2="1">
@@ -230,8 +230,8 @@ export function DashboardCharts({
         </CardHeader>
         <CardContent className="h-56 pt-2">
           <div className="flex h-full flex-col gap-3 lg:flex-row">
-            <div className="flex-1 min-h-0">
-              <ResponsiveContainer width="100%" height="100%">
+            <div className="flex-1 min-h-0 min-w-0">
+              <ResponsiveContainer width="100%" height="100%" minWidth={0} minHeight={100}>
                 <PieChart>
                   <Pie
                     data={repartitionData}
@@ -273,8 +273,8 @@ export function DashboardCharts({
           <h3 className="font-semibold text-slate-900">Évolution du taux de présence</h3>
           <p className="text-xs text-slate-500">Suivi mensuel du taux moyen de présence</p>
         </CardHeader>
-        <CardContent className="h-56 pt-2">
-          <ResponsiveContainer width="100%" height="100%">
+        <CardContent className="h-56 min-h-0 pt-2">
+          <ResponsiveContainer width="100%" height="100%" minWidth={0} minHeight={100}>
             <LineChart data={presenceData}>
               <CartesianGrid strokeDasharray="2 2" stroke="#f1f5f9" />
               <XAxis dataKey="month" stroke="#94a3b8" fontSize={12} />
